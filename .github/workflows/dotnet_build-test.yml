@@ -36,7 +36,7 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: .NET Core Desktop
+name: .NET Build + Tests
 
 on:
   push:
@@ -53,26 +53,34 @@ jobs:
 
     env:
       Solution_Name: ParkingFeeCalculator.sln                      # Replace with your solution name, i.e. MyWpfApp.sln.
-      Project_Path: ParkingFeeCalculator\ParkingFeeCalculator.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
-      Test_Project_Path: ParkingFeeCalculator.Tests\ParkingFeeCalculator.Tests.csproj                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Project_Path: ParkingFeeCalculator/ParkingFeeCalculator.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Test_Project_Path: ParkingFeeCalculator.Tests/ParkingFeeCalculator.Tests.csproj                # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       #Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
 
 
     steps:
+      
+    # Pull code from repository
+    - name: Checkout code
+      uses: actions/checkout@v6.0.2
 
     # Install the .NET Core workload
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 8.0.x
 
+
+
+
     # Build application
+    # Using variable to ensure it builds the right file
     - name: Build application
-      run: dotnet build
+      run: dotnet build ${{ env.Solution_Name }}
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test
+      run: dotnet test ${{ env.Solution_Name }}
 
 
 
