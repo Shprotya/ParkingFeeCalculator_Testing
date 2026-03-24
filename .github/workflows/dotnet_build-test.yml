@@ -40,7 +40,7 @@ name: .NET Build + Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "actions" ]
   pull_request:
     branches: [ "main" ]
 
@@ -50,6 +50,10 @@ jobs:
 
     runs-on: ubuntu-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+                          
+    # Specify to run all steps inside this specific container for consistency
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:8.0
 
     env:
       Solution_Name: ParkingFeeCalculator.sln                      # Replace with your solution name, i.e. MyWpfApp.sln.
@@ -63,15 +67,6 @@ jobs:
     # Pull code from repository
     - name: Checkout code
       uses: actions/checkout@v6.0.2
-
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v5
-      with:
-        dotnet-version: 8.0.x
-
-
-
 
     # Build application
     # Using variable to ensure it builds the right file
