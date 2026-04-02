@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingFeeCalculator.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingWebApp", "ParkingWebApp\ParkingWebApp.csproj", "{C75E390D-7977-498A-AA1E-6DE23874EFCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingSeleniumTests", "ParkingSeleniumTests\ParkingSeleniumTests.csproj", "{72EE3445-D24F-4807-B4B6-033FC7548000}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C75E390D-7977-498A-AA1E-6DE23874EFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75E390D-7977-498A-AA1E-6DE23874EFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75E390D-7977-498A-AA1E-6DE23874EFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72EE3445-D24F-4807-B4B6-033FC7548000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72EE3445-D24F-4807-B4B6-033FC7548000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72EE3445-D24F-4807-B4B6-033FC7548000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72EE3445-D24F-4807-B4B6-033FC7548000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
