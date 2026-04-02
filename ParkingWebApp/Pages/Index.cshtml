@@ -1,10 +1,21 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Parking Fee Calculator</h2>
+
+<form method="post">
+    <label>Vehicle Type:</label>
+    <select name="VehicleType">
+        <option value="standard">Standard</option>
+        <option value="electric">Electric</option>
+    </select>
+    <br /><br />
+
+    <label>Hours:</label>
+    <input type="number" name="Hours" id="Hours" />
+    <br /><br />
+
+    <button type="submit">Calculate</button>
+</form>
+
+<br />
