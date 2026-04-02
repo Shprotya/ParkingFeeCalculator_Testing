@@ -40,7 +40,7 @@ name: .NET Build + Tests
 
 on:
   push:
-    branches: [ "main", "actions" ]
+    branches: [ "main", "actions", "webForm" ]
   pull_request:
     branches: [ "main" ]
 
