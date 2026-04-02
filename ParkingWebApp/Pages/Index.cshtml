@@ -1,21 +1,17 @@
 ﻿@page
 @model IndexModel
-
 <h2>Parking Fee Calculator</h2>
-
 <form method="post">
     <label>Vehicle Type:</label>
-    <select name="VehicleType">
+    <select name="VehicleType" id="VehicleType">
         <option value="standard">Standard</option>
         <option value="electric">Electric</option>
     </select>
     <br /><br />
-
     <label>Hours:</label>
     <input type="number" name="Hours" id="Hours" />
     <br /><br />
-
-    <button type="submit">Calculate</button>
+    <button type="submit" id="submitBtn">Calculate</button>
 </form>
 <br />
 <p id="result">@Model.Result</p>
